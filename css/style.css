@@ -1,0 +1,70 @@
+/* make h1 have different color for every letter*/
+
+#color-canvas {
+    border: 1px solid #000;
+}
+
+#purple-btn {
+    color: white;
+    background-color: #9c27b0;
+}
+
+#gold-btn {
+    color: white;
+    background-color: #f9a825;
+    border: none;
+}
+
+#brown-btn {
+    color: white;
+    background-color: #795548;
+    border: none;
+}
+
+#expand-options {
+    display: none !important;
+    visibility: hidden;
+}
+
+.buttons>* {
+    margin: 5px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    #shrink-options {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    #expand-options {
+        display: block !important;
+        visibility: visible;
+    }
+
+    #color-canvas {
+        width: 550px;
+        height: 400px;
+    }
+}
+
+@media(min-width: 768px) {
+    #color-canvas {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+@media(min-width: 992px) {
+    #color-canvas {
+        width: 850px;
+        height: 600px;
+    }
+}
+
+@media(min-width: 1200px) {
+     #color-canvas {
+        width: 950px;
+        height: 700px;
+    }
+}

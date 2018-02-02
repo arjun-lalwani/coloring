@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- INCOMPLETE -->
+    <meta name="description" content="description of your page">
+
+    <!-- Keywords for search engines -->
+    <meta name="keywords" content="college, Arjun, golden rules, make the most">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title></title>
+</head>
+
+<body>
+    <main>
+        <div class="container text-center">
+            <h1 class="pt-3">Coloring</h1>
+        </div>
+
+        <!-- Options -->
+        <section class="mt-4">
+            <div id="shrink-options" class="container d-flex justify-content-center">
+                <div class="dropdown mr-2">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Select Color</button>
+                    <div id="dropdown-colors" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Red</a>
+                        <a class="dropdown-item" href="#">Green</a>
+                        <a class="dropdown-item" href="#">Blue</a>
+                        <a class="dropdown-item" href="#">Purple</a>
+                        <a class="dropdown-item" href="#">Gold</a>
+                    </div>
+                </div>
+                <div id="dropdown-levels" class="dropdown ml-2">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Select Level</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Easy</a>
+                        <a class="dropdown-item" href="#">Medium</a>
+                        <a class="dropdown-item" href="#">Hard</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="expand-options" class="container d-flex justify-content-center">
+                <div class="row">
+                    <div class="text-center col">
+                        <h2>Select Color</h2>
+                        <div class="d-flex-wrap justify-content-around buttons">
+                            <button class="btn btn-danger">Red</button>
+                            <button class="btn btn-success">Green</button>
+                            <button class="btn btn-primary">Blue</button>
+                            <button id="purple-btn" class="btn btn-light">Purple</button>
+                            <button id="gold-btn" class="btn btn-light">Gold</button>
+                            <button id="brown-btn" class="btn btn-light">Brown</button>
+                        </div>
+                    </div>
+                    <div class="text-center col">
+                        <h2>Select Level</h2>
+                        <div class="d-flex-wrap justify-content-around buttons">
+                            <button class="btn btn-info">Easy</button>
+                            <button class="btn btn-info">Medium</button>
+                            <button class="btn btn-info">Hard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4 text-center">
+                <button id="generate-img" type="button" class="btn btn-primary">Generate Image</button>
+            </div>
+        </section>
+
+        <!-- Canvas -->
+        <div class="container mt-5 d-flex justify-content-center">
+            <canvas id="color-canvas" width="350" height="300">Canvas not supported
+            </canvas>
+        </div>
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- custom js file -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

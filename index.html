@@ -86,26 +86,67 @@
             </div>
         </section>
 
-        <div class="container mt-3">
-            <h4>Status</h4>
-            <p class="d-inline status-property lead">Color: <span id="status-color">Blue</span></p>
-            <p class="ml-4 d-inline status-property lead">Level: <span id="status-level">Easy</span></p>
-        </div>
+        <div class="container">
+            <div class="mt-3">
+                <h4>Status</h4>
+                <p class="d-inline status-property lead pr-4">Color: <span id="status-color">Blue</span></p>
+                <p class="pr-4 d-inline status-property lead">Level: <span id="status-level">Easy</span></p>
+                <p class="pr-4 d-inline status-property lead">Thickness: <span id="status-thickness">1</span></p>
+                <p class="pr-4 d-inline status-property lead">Opacity: <span id="status-opacity">1</span></p>
+                <p class="d-inline status-property lead">Eraser: <span id="status-eraser">Disable</span></p>
+            </div>
 
-        <!-- Canvas -->
-        <div class="container mt-3 d-flex justify-content-center">
-            <canvas id="color-canvas" width="350" height="300">Canvas not supported
-            </canvas>
+            <!-- Canvas -->
+            <div class="mt-3 d-flex justify-content-center">
+                <canvas id="color-canvas" width="350" height="300">Canvas not supported
+                </canvas>
+            </div>
+
+            <!-- customize options -->
+            <div class="mt-4">
+                <h4>Customize</h4>
+                <div class="d-flex pt-2 flex-wrap">
+                    <div>
+                        <div class="dropdown mr-4 mb-2">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Thickness</button>
+                            <div id="dropdown-thickness" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown mr-4">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Opacity</button>
+                            <div id="dropdown-opacity" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown mr-4">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Eraser</button>
+                            <div id="dropdown-eraser" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Disable</a>
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-secondary" type="button">Clear</button>
+                    </div>
+                </div>
+            </div>
         </div>
         </section>
-
-        <!-- customize options -->
-        <div class="container mt-4">
-            <h3>Customize</h3>
-
-            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"
-            />
-        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

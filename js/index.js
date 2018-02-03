@@ -9,13 +9,15 @@ let images = {
 let state = {
     'color': 'blue',
     'level': 'easy',
+    'thickness': '1',
+    'opacity': '1',
+    'eraser': 'Disable',
     'mouseState': ''
 }
 
 $(function () {
     adjustCanvasSize();
 });
-
 
 $('#dropdown-colors').click(function (event) {
     state.color = event.target.innerText;
@@ -25,6 +27,21 @@ $('#dropdown-colors').click(function (event) {
 $('#dropdown-levels').click(function (event) {
     state.level = event.target.innerText.toLowerCase();
     changeLevelStatus();
+});
+
+$('#dropdown-thickness').click(function (event) {
+    state.thickness = event.target.innerText;
+    $('#status-thickness').text(state.thickness);
+});
+
+$('#dropdown-opacity').click(function (event) {
+    state.opacity = event.target.innerText;
+    $('#status-opacity').text(state.opacity);
+});
+
+$('#dropdown-eraser').click(function (event) {
+    state.eraser = event.target.innerText;
+    $('#status-eraser').text(state.eraser);
 });
 
 $('#red-btn, #green-btn, #blue-btn, #purple-btn, #gold-btn, #brown-btn').click(function (event) {
@@ -146,7 +163,6 @@ canvas.addEventListener('mouseup', function () {
 
 
 function changeColorStatus() {
-
     $('#status-color').text(capitalize(state.color));
 }
 

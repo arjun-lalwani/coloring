@@ -62,20 +62,20 @@
                     <div class="text-center col">
                         <h2>Select Color</h2>
                         <div class="d-flex-wrap justify-content-around buttons">
-                            <button class="btn btn-danger">Red</button>
-                            <button class="btn btn-success">Green</button>
-                            <button class="btn btn-primary">Blue</button>
+                            <button id="red-btn" class="btn btn-danger">Red</button>
+                            <button id="green-btn" class="btn btn-success">Green</button>
+                            <button id="blue-btn" class="btn btn-primary">Blue</button>
                             <button id="purple-btn" class="btn btn-light">Purple</button>
-                            <button id="gold-btn" class="btn btn-light">Gold</button>
+                            <button id="gold-btn" class="btn btn-warning">Gold</button>
                             <button id="brown-btn" class="btn btn-light">Brown</button>
                         </div>
                     </div>
                     <div class="text-center col">
                         <h2>Select Level</h2>
                         <div class="d-flex-wrap justify-content-around buttons">
-                            <button class="btn btn-info">Easy</button>
-                            <button class="btn btn-info">Medium</button>
-                            <button class="btn btn-info">Hard</button>
+                            <button id="easy-btn" class="btn btn-info">Easy</button>
+                            <button id="medium-btn" class="btn btn-info">Medium</button>
+                            <button id="hard-btn" class="btn btn-info">Hard</button>
                         </div>
                     </div>
                 </div>
@@ -86,13 +86,26 @@
             </div>
         </section>
 
+        <div class="container mt-3">
+            <h4>Status</h4>
+            <p class="d-inline status-property lead">Color: <span id="status-color">Blue</span></p>
+            <p class="ml-4 d-inline status-property lead">Level: <span id="status-level">Easy</span></p>
+        </div>
+
         <!-- Canvas -->
-        <div class="container mt-5 d-flex justify-content-center">
+        <div class="container mt-3 d-flex justify-content-center">
             <canvas id="color-canvas" width="350" height="300">Canvas not supported
             </canvas>
         </div>
         </section>
 
+        <!-- customize options -->
+        <div class="container mt-4">
+            <h3>Customize</h3>
+
+            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"
+            />
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

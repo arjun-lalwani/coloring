@@ -26,6 +26,10 @@
     visibility: hidden;
 }
 
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
 .buttons>* {
     margin: 5px;
 }

@@ -49,7 +49,7 @@ $('#dropdown-eraser').click(function (event) {
 });
 
 // used Problem Set 3 code
-$('#save').click(function (event) {
+$('#save').click(function () {
     let data = canvas.toDataURL('image/png');
     let a = document.createElement("a");
     a.setAttribute('href', data);
@@ -68,7 +68,7 @@ $('#easy-btn, #medium-btn, #hard-btn').click(function (event) {
 });
 
 // generates image depending on state and makes it responsive to center in canvas
-$('#generate-img').click(function (event) {
+$('#generate-img').click(function () {
 
     let ctx = $('canvas')[0].getContext('2d');
 
@@ -86,7 +86,6 @@ $('#generate-img').click(function (event) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         let ctxWidth = canvas.width;
-        let ctxHeight = canvas.height;
         var imgWidth = 167.5;
         var imgHeight = 205;
         var startX = 90;
@@ -132,21 +131,21 @@ $(window).scroll(function () {
 // make canvas responsive by determining the right size
 function adjustCanvasSize() {
     let canvas = document.querySelector('canvas');
-    let window_width = $(window).width();
+    let windowWidth = $(window).width();
 
-    if (window_width < 576) {
+    if (windowWidth < 576) {
         canvas.width = 350;
         canvas.height = 300;
-    } else if (window_width >= 576 && window_width < 768) {
+    } else if (windowWidth >= 576 && windowWidth < 768) {
         canvas.width = 550;
         canvas.height = 400;
-    } else if (window_width >= 768 && window_width < 992) {
+    } else if (windowWidth >= 768 && windowWidth < 992) {
         canvas.width = 700;
         canvas.height = 500;
-    } else if (window_width >= 992 && window_width < 1200) {
+    } else if (windowWidth >= 992 && windowWidth < 1200) {
         canvas.width = 850;
         canvas.height = 600;
-    } else if (window_width >= 1200) {
+    } else if (windowWidth >= 1200) {
         canvas.width = 950;
         canvas.height = 700;
     }

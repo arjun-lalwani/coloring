@@ -1,5 +1,6 @@
 'use strict';
 
+// custom images for different levels
 let images = {
     'easy': ['cake.gif', 'caterpillar.gif', 'christmas-tree.gif', 'duck.gif', 'elephant.png'],
     'medium': ['boat.gif', 'frog.gif', 'rocket.gif', 'train.gif', 'whale.gif'],
@@ -10,11 +11,15 @@ let state = {
     'color': 'blue',
     'level': 'easy',
     'thickness': '1',
-    'opacity': '1',
     'eraser': 'Disable',
     'mouseState': ''
 }
 
+let canvas = document.querySelector('canvas');
+let ctx = canvas.getContext('2d');
+let canvasOffset = calcualateOffset();
+
+// makes canvas size responsive
 $(function () {
     adjustCanvasSize();
 });
@@ -34,14 +39,22 @@ $('#dropdown-thickness').click(function (event) {
     $('#status-thickness').text(state.thickness);
 });
 
-$('#dropdown-opacity').click(function (event) {
-    state.opacity = event.target.innerText;
-    $('#status-opacity').text(state.opacity);
-});
-
 $('#dropdown-eraser').click(function (event) {
     state.eraser = event.target.innerText;
     $('#status-eraser').text(state.eraser);
+    if (state.eraser !== 'Disable') {
+        state.color = 'white';
+        state.thickness = state.eraser;
+    }
+});
+
+// used Problem Set 3 code
+$('#save').click(function (event) {
+    let data = canvas.toDataURL('image/png');
+    let a = document.createElement("a");
+    a.setAttribute('href', data);
+    a.setAttribute('download', 'drawing.png');
+    a.click();
 });
 
 $('#red-btn, #green-btn, #blue-btn, #purple-btn, #gold-btn, #brown-btn').click(function (event) {
@@ -54,10 +67,12 @@ $('#easy-btn, #medium-btn, #hard-btn').click(function (event) {
     changeLevelStatus();
 });
 
+// generates image depending on state and makes it responsive to center in canvas
 $('#generate-img').click(function (event) {
 
-    // select canvas
     let ctx = $('canvas')[0].getContext('2d');
+
+    // selects level of difficulty chosen by user
     var lod = state.level;
 
     // get random index to access from array for each level
@@ -70,8 +85,8 @@ $('#generate-img').click(function (event) {
     img.onload = function () {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-        let ctxWidth = canvas.width; // does not get width from CSS
-        let ctxHeight = canvas.height; // does not get height from CSS
+        let ctxWidth = canvas.width;
+        let ctxHeight = canvas.height;
         var imgWidth = 167.5;
         var imgHeight = 205;
         var startX = 90;
@@ -100,20 +115,21 @@ $('#generate-img').click(function (event) {
             startY = 30;
         }
         ctx.drawImage(img, startX, startY, imgWidth, imgHeight);
-
     }
     img.src = src;
 });
 
-
-let canvas = document.querySelector('canvas');
-let ctx = canvas.getContext('2d');
-
-
+// make canvas responsive when window is resized
 $(window).resize(function () {
     adjustCanvasSize();
 });
 
+// make offSet for drawing responsive when user scrolls
+$(window).scroll(function () {
+    canvasOffset = calcualateOffset();
+});
+
+// make canvas responsive by determining the right size
 function adjustCanvasSize() {
     let canvas = document.querySelector('canvas');
     let window_width = $(window).width();
@@ -139,7 +155,8 @@ function adjustCanvasSize() {
 canvas.addEventListener('mousedown', function (event) {
     state.mouseState = 'mouseDown';
     ctx.strokeStyle = state.color;
-    let canvasOffset = $('canvas').offset();
+
+    canvasOffset = calcualateOffset();
     ctx.moveTo((event.clientX - canvasOffset.left), (event.clientY - canvasOffset.top));
 
     // begin path
@@ -148,19 +165,24 @@ canvas.addEventListener('mousedown', function (event) {
 
 canvas.addEventListener('mousemove', function (event) {
     if (state.mouseState === 'mouseDown') {
-        ctx.lineWidth = 2;
-        let canvasOffset = $('canvas').offset();
+        ctx.lineWidth = state.thickness;
+        canvasOffset = calcualateOffset();
         ctx.lineTo((event.clientX - canvasOffset.left), (event.clientY - canvasOffset.top));
         ctx.stroke();
     }
 });
-
 
 canvas.addEventListener('mouseup', function () {
     state.mouseState = "mouseUp";
     ctx.closePath();
 });
 
+// calculates the right offset after scrolling on page
+function calcualateOffset() {
+    let tempCanvasOffSet = $('canvas').offset();
+    tempCanvasOffSet.top -= window.scrollY;
+    return tempCanvasOffSet;
+}
 
 function changeColorStatus() {
     $('#status-color').text(capitalize(state.color));
@@ -174,3 +196,9 @@ function changeLevelStatus() {
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+$('#clear-btn').click(function () {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+});
+
+

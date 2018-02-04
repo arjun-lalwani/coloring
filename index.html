@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <!-- INCOMPLETE -->
-    <meta name="description" content="description of your page">
+    <meta name="description" content="Allow users to create a beautiful picture with their artistic skills">
 
     <!-- Keywords for search engines -->
-    <meta name="keywords" content="college, Arjun, golden rules, make the most">
+    <meta name="keywords" content="drawing, Arjun, coloring, customize, download, image">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,14 +14,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title></title>
+    <title>Coloring</title>
 </head>
 
 <body>
@@ -32,7 +29,7 @@
             <h1 class="pt-3">Coloring</h1>
         </div>
 
-        <!-- Options -->
+        <!-- Color & Level Options for mobile -->
         <section class="mt-4">
             <div id="shrink-options" class="container d-flex justify-content-center">
                 <div class="dropdown mr-2">
@@ -57,6 +54,7 @@
                 </div>
             </div>
 
+            <!-- Color & Level Options for tablets & desktops -->
             <div id="expand-options" class="container d-flex justify-content-center">
                 <div class="row">
                     <div class="text-center col">
@@ -86,76 +84,74 @@
             </div>
         </section>
 
-        <div class="container">
-            <div class="mt-3">
-                <h4>Status</h4>
-                <p class="d-inline status-property lead pr-4">Color: <span id="status-color">Blue</span></p>
-                <p class="pr-4 d-inline status-property lead">Level: <span id="status-level">Easy</span></p>
-                <p class="pr-4 d-inline status-property lead">Thickness: <span id="status-thickness">1</span></p>
-                <p class="pr-4 d-inline status-property lead">Opacity: <span id="status-opacity">1</span></p>
-                <p class="d-inline status-property lead">Eraser: <span id="status-eraser">Disable</span></p>
-            </div>
+        <!-- Canvas & Customizations -->
+        <section>
+            <!-- Status Summary of options selected -->
+            <div class="container">
+                <div class="mt-3">
+                    <h4>Status</h4>
+                    <p class="d-inline status-property lead pr-4">Color: <span id="status-color">Blue</span></p>
+                    <p class="pr-4 d-inline status-property lead">Level: <span id="status-level">Easy</span></p>
+                    <p class="pr-4 d-inline status-property lead">Thickness: <span id="status-thickness">1</span></p>
+                    <p class="d-inline status-property lead">Eraser: <span id="status-eraser">Disable</span></p>
+                </div>
 
-            <!-- Canvas -->
-            <div class="mt-3 d-flex justify-content-center">
-                <canvas id="color-canvas" width="350" height="300">Canvas not supported
-                </canvas>
-            </div>
+                <!-- Canvas -->
+                <div class="mt-3 d-flex justify-content-center">
+                    <canvas id="color-canvas" width="350" height="300">Canvas not supported
+                    </canvas>
+                </div>
 
-            <!-- customize options -->
-            <div class="mt-4">
-                <h4>Customize</h4>
-                <div class="d-flex pt-2 flex-wrap">
-                    <div>
-                        <div class="dropdown mr-4 mb-2">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Thickness</button>
-                            <div id="dropdown-thickness" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">1</a>
-                                <a class="dropdown-item" href="#">2</a>
-                                <a class="dropdown-item" href="#">3</a>
+                <!-- Customize Options -->
+                <div class="mt-4">
+                    <h4>Customize</h4>
+                    <div class="d-flex pt-2 flex-wrap">
+                        <div>
+                            <div class="dropdown mr-4 mb-2">
+                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Thickness</button>
+                                <div id="dropdown-thickness" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">1</a>
+                                    <a class="dropdown-item" href="#">2</a>
+                                    <a class="dropdown-item" href="#">3</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="dropdown mr-4">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Opacity</button>
-                            <div id="dropdown-opacity" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">1</a>
-                                <a class="dropdown-item" href="#">2</a>
-                                <a class="dropdown-item" href="#">3</a>
+                        <div>
+                            <div class="dropdown mr-4">
+                                <button id="eraser" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Eraser</button>
+                                <div id="dropdown-eraser" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Disable</a>
+                                    <a class="dropdown-item" href="#">1</a>
+                                    <a class="dropdown-item" href="#">2</a>
+                                    <a class="dropdown-item" href="#">3</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="dropdown mr-4">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Eraser</button>
-                            <div id="dropdown-eraser" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Disable</a>
-                                <a class="dropdown-item" href="#">1</a>
-                                <a class="dropdown-item" href="#">2</a>
-                                <a class="dropdown-item" href="#">3</a>
+                        <div>
+                            <div class="mr-4">
+                                <button id="save" class="btn btn-success" type="button">Save</button>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-secondary" type="button">Clear</button>
+                        <div>
+                            <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
     </main>
 
+    <!-- jQuery JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <!-- custom js file -->
+
+    <!-- Custom JS-->
     <script src="js/index.js"></script>
 </body>
 

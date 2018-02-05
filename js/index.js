@@ -44,7 +44,11 @@ $('#dropdown-eraser').click(function (event) {
     $('#status-eraser').text(state.eraser);
     if (state.eraser !== 'Disable') {
         state.color = 'white';
-        state.thickness = state.eraser;
+        state.thickness = state.eraser;;
+        $('#status-color').text("Eraser");
+    } else {
+        state.color = 'Blue';
+        $('#status-color').text(state.color);
     }
 });
 
@@ -113,6 +117,7 @@ $('#generate-img').click(function () {
             startX = 240;
             startY = 30;
         }
+
         ctx.drawImage(img, startX, startY, imgWidth, imgHeight);
     }
     img.src = src;
@@ -154,7 +159,6 @@ function adjustCanvasSize() {
 canvas.addEventListener('mousedown', function (event) {
     state.mouseState = 'mouseDown';
     ctx.strokeStyle = state.color;
-
     canvasOffset = calcualateOffset();
     ctx.moveTo((event.clientX - canvasOffset.left), (event.clientY - canvasOffset.top));
 

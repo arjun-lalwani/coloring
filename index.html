@@ -82,6 +82,46 @@
             <div class="container mt-4 text-center">
                 <button id="generate-img" type="button" class="btn btn-primary">Generate Image</button>
             </div>
+
+            <!-- Customize Options -->
+            <div class="container mt-4">
+                <h4>Customize</h4>
+                <div class="d-flex pt-2 flex-wrap">
+                    <div>
+                        <div class="dropdown mr-4 mb-2">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Thickness</button>
+                            <div id="dropdown-thickness" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                                <a class="dropdown-item" href="#">4</a>
+                                <a class="dropdown-item" href="#">5</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown mr-4">
+                            <button id="eraser" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Eraser</button>
+                            <div id="dropdown-eraser" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Disable</a>
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mr-4">
+                            <button id="save" class="btn btn-success" type="button">Save</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Canvas & Customizations -->
@@ -101,44 +141,6 @@
                     <canvas id="color-canvas" width="350" height="300">Canvas not supported
                     </canvas>
                 </div>
-
-                <!-- Customize Options -->
-                <div class="mt-4">
-                    <h4>Customize</h4>
-                    <div class="d-flex pt-2 flex-wrap">
-                        <div>
-                            <div class="dropdown mr-4 mb-2">
-                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">Thickness</button>
-                                <div id="dropdown-thickness" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">1</a>
-                                    <a class="dropdown-item" href="#">2</a>
-                                    <a class="dropdown-item" href="#">3</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="dropdown mr-4">
-                                <button id="eraser" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Eraser</button>
-                                <div id="dropdown-eraser" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Disable</a>
-                                    <a class="dropdown-item" href="#">1</a>
-                                    <a class="dropdown-item" href="#">2</a>
-                                    <a class="dropdown-item" href="#">3</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mr-4">
-                                <button id="save" class="btn btn-success" type="button">Save</button>
-                            </div>
-                        </div>
-                        <div>
-                            <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -147,6 +149,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 
+    <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 
